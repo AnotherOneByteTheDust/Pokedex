@@ -57,69 +57,26 @@ class Pokemon {
   }
 
   addHoverStyle() {
-    switch (this.pokemon["type"]) {
-      case "grass":
-        this.parent.style.background =
-          "linear-gradient(to top, #032911, #065316)";
-        break;
-      case "fire":
-        this.parent.style.background =
-          "linear-gradient(to top, #290403, #99330c)";
-        break;
-      case "normal":
-        this.parent.style.background =
-          "linear-gradient(to top, #1c1c1c, #6b6b6b)";
-        break;
-      case "water":
-        this.parent.style.background =
-          "linear-gradient(to top, #031a29, #066da1)";
-        break;
-      case "poison":
-        this.parent.style.background =
-          "linear-gradient(to top, #120329, #260653)";
-        break;
-      case "ghost":
-        this.parent.style.background =
-          "linear-gradient(to top, #000005, #230057)";
-        break;
-      case "rock":
-        this.parent.style.background =
-          "linear-gradient(to top, #21160a, #4f3518)";
-        break;
-      case "dragon":
-        this.parent.style.background =
-          "linear-gradient(to top, #031a29, #063253)";
-        break;
-      case "bug":
-        this.parent.style.background =
-          "linear-gradient(to top, #232903, #495306)";
-        break;
-      case "ground":
-        this.parent.style.background =
-          "linear-gradient(to top, #63411a, #ba7d36)";
-        break;
-      case "electric":
-        this.parent.style.background =
-          "linear-gradient(to top, #292603, #a19406)";
-        break;
-      case "fighting":
-        this.parent.style.background =
-          "linear-gradient(to top, #170000, #4a0000)";
-        break;
-      case "psychic":
-        this.parent.style.background =
-          "linear-gradient(to top, #29031c, #a1067d)";
-        break;
-      case "fairy":
-        this.parent.style.background =
-          "linear-gradient(to top, #5b345c, #f08af2)";
-        break;
-      case "ice":
-        this.parent.style.background =
-          "linear-gradient(to top, #003b37, #00a69e)";
-        break;
-    }
+    const pkmtypes = {
+      grass: "linear-gradient(to top, #032911, #065316)",
+      fire: "linear-gradient(to top, #290403, #99330c)",
+      normal: "linear-gradient(to top, #290403, #99330c)",
+      water: "linear-gradient(to top, #031a29, #066da1)",
+      poison: "linear-gradient(to top, #120329, #260653)",
+      ghost: "linear-gradient(to top, #000005, #230057)",
+      rock: "linear-gradient(to top, #21160a, #4f3518)",
+      dragon: "linear-gradient(to top, #031a29, #063253)",
+      bug: "linear-gradient(to top, #232903, #495306)",
+      ground: "linear-gradient(to top, #63411a, #ba7d36)",
+      electric: "linear-gradient(to top, #292603, #a19406)",
+      fighting: "linear-gradient(to top, #170000, #4a0000)",
+      psychic: "linear-gradient(to top, #29031c, #a1067d)",
+      fairy: "linear-gradient(to top, #5b345c, #f08af2)",
+      ice: "linear-gradient(to top, #003b37, #00a69e)",
+      flying: "linear-gradient(to top, #290403, #003b37)",
+    };
 
+    this.parent.style.background = pkmtypes[this.pokemon["type"]];
     this.imgback.classList.add("hidden");
     this.imgfront.classList.remove("hidden");
     this.imgfront.style.transform = "scale(1.5)";
@@ -133,6 +90,15 @@ class Pokemon {
   }
 
   handleEvent(e) {
+    /*
+    let allEvents = {
+      "mouseenter": this.addHoverStyle.bind(),
+      "click": this.pokemon["cry"].play.bind(),
+      "mouseleave": this.removeHoverStyle.bind()
+    }
+  
+    allEvents[e.type]();
+    */
     switch (e.type) {
       case "mouseenter":
         this.addHoverStyle();
