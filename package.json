@@ -1,5 +1,5 @@
 {
-  "name": "p4-dsi",
+  "name": "Pokedex",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "parcel src/index.html",
     "deploy": "gh-pages -d build",
     "clean": "rm -rf dist package-lock.json node_modules .cache build",
-    "build": "parcel build src/index.html --public-url /dsi-p4-pokedex-b3cl0s3r -d build",
+    "build": "parcel build src/index.html --public-url /Pokedex -d build",
     "check": "eslint src/**/*.js",
     "fix": "eslint src/**/*.js --fix",
     "prettier": "prettier --write src/**/*.html src/**/*.css",
@@ -20,7 +20,7 @@
     "vanilla-tilt": "^1.7.0"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.2",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.1.3",
